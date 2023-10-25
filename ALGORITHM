@@ -1,0 +1,28 @@
+1. Create a Trie Node structure to represent each node in the Trie.
+struct TrieNode
+{
+    struct TrieNode *children[2];
+    char route[50];
+};
+2. Each node has two children (0 and 1) for binary routing and a character array to store the route information.
+
+3. Implement a function createNode() to create and initialize a new Trie Node. 
+  a. It allocates memory for the node
+  b. sets the route to an empty string 
+  c. and initializes the children to NULL.
+
+4. Implement an insert function to insert prefixes and their corresponding routes into the Trie. 
+ a. The function iterates through each character in the prefix, following the Trie structure. 
+ b. If a node for the current character does not exist, it creates a new node. 
+ c. The route is stored at the leaf node of the Trie.
+
+5. Implement a longestPrefixMatch function to find the longest matching route for a given IP address. 
+ a. It starts at the root of the Trie and iterates through the IP address, checking each digit (0 or 1) in the binary representation. 
+ b. If a matching route is found at a node, it updates the matchedRoute. 
+ c. The function continues until there are no more matching nodes.
+
+6. In the main function, create the root node of the Trie and insert several prefixes and their corresponding routes.
+
+7. Define a destination IP address and call longestPrefixMatch to find the best-matching route for that IP.
+
+8. Finally, print the matched route if one is found, or a message indicating no matching route was found.
